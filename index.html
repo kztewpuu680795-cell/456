@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Minimal | Bootstrap portfolio template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- gLightbox CSS-->
+    <link rel="stylesheet" href="vendor/glightbox/css/glightbox.min.css">
+    <!-- Google fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&amp;display=swap">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css"><!-- 这里已引用 -->
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.png">
+</head>
+<body>
+    <!-- 省略前面的结构，保持不变 -->
+
+    <!-- ==== 作品列表 ==== -->
+    <div class="px-4 py-5">
+        <div class="container-fluid">
+            <div class="row gy-4 gx-5 masonry-wrapper">
+                <!-- 下面每一张的 <a> 都改成 open-drawer -->
+                <div class="col-lg-4 col-md-6 grid-item">
+                    <div class="listing-item ps-0">
+                        <div class="position-relative">
+                            <ul class="list-inline listing-tags m-0">
+                                <li class="list-inline-item"><a class="reset-anchor fw-normal text-gray text-sm" href="detail.html">Creative</a></li>
+                            </ul>
+                            <a class="reset-anchor d-block listing-img-holder open-drawer" href="javascript:void(0)">
+                                <img class="img-fluid rounded-lg" src="img/portfolio-1.jpg" alt="Treasure"/>
+                                <p class="mb-0 text-primary small d-flex align-items-center listing-btn">
+                                    <span>Look inside</span>
+                                    <svg class="svg-icon text-primary svg-icon-sm ms-1"><use xlink:href="#arrow-right-1"></use></svg>
+                                </p>
+                            </a>
+                        </div>
+                        <div class="py-3"><a class="reset-anchor" href="detail.html"><h2 class="h5 listing-item-heading">Treasure</h2></a>
+                            <p class="text-sm mb-0 listing-item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 其余 8 张同样改成 open-drawer，代码略（只改 href 与 class） -->
+                …
+            </div>
+        </div>
+    </div>
+
+    <!-- ==== Photo Drawer（图片抽屉） ==== -->
+    <div id="photoDrawerBackdrop" class="photo-drawer-backdrop"></div>
+
+    <div id="photoDrawer" class="photo-drawer" role="dialog" aria-modal="true">
+        <div class="drawer-content position-relative">
+            <button type="button" class="drawer-close" aria-label="关闭抽屉">&times;</button>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- JS 动态插入图片 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==== Footer 以及其余原有代码保持不变 ==== -->
+
+    <!-- JavaScript files-->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/masonry-layout/masonry.pkgd.min.js"></script>
+    <script src="vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="js/front.js"></script>
+
+    <!-- 之前的 injectSvgSprite 脚本保持不动 -->
+    <script>
+      function injectSvgSprite(path){
+          var ajax = new XMLHttpRequest();
+          ajax.open("GET", path, true);
+          ajax.send();
+          ajax.onload = function(e){
+              var div = document.createElement("div");
+              div.className = 'd-none';
+              div.innerHTML = ajax.responseText;
+              document.body.insertBefore(div, document.body.childNodes[0]);
+          }
+      }
+      injectSvgSprite('icons/orion-svg-sprite.svg');
+    </script>
+
+    <!-- ---------- Photo Drawer 脚本 ---------- -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const drawer = document.getElementById('photoDrawer');
+        const backdrop = document.getElementById('photoDrawerBackdrop');
+        const closeBtn = drawer.querySelector('.drawer-close');
+        const galleryGrid = document.getElementById('galleryGrid');
+
+        // -------------------------------------------------
+        // 1️⃣ 图片列表（请自行把 gallery/ 里的文件名填进来，最多 100 条）
+        // -------------------------------------------------
+        const imageList = [
+            '01.jpg','02.jpg','03.jpg','04.jpg','05.jpg','06.jpg','07.jpg','08.jpg',
+            '09.jpg','10.jpg','11.jpg','12.jpg'   // 示例 12 张
+            // … 继续添加至 100 张
+        ];
+
+        // 生成网格
+        imageList.forEach(function (file) {
+            const img = document.createElement('img');
+            img.src = 'gallery/' + file;
+            img.alt = file;
+            img.loading = 'lazy';
+            galleryGrid.appendChild(img);
+        });
+
+        // -------------------------------------------------
+        // 2️⃣ 打开抽屉
+        // -------------------------------------------------
+        function openDrawer() {
+            drawer.classList.add('show');
+            backdrop.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // -------------------------------------------------
+        // 3️⃣ 关闭抽屉
+        // -------------------------------------------------
+        function closeDrawer() {
+            drawer.classList.remove('show');
+            backdrop.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+
+        // 绑定打开（所有作品图）
+        document.querySelectorAll('.open-drawer').forEach(function (el) {
+            el.addEventListener('click', openDrawer);
+        });
+
+        // 绑定关闭
+        closeBtn.addEventListener('click', closeDrawer);
+        backdrop.addEventListener('click', closeDrawer);
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && drawer.classList.contains('show')) {
+                closeDrawer();
+            }
+        });
+    });
+    </script>
+
+    <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+          crossorigin="anonymous">
+</body>
+</html>
