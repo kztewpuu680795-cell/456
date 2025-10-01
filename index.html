@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Minimal | Bootstrap portfolio template</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <!-- gLightbox CSS-->
+  <link rel="stylesheet" href="vendor/glightbox/css/glightbox.min.css">
+  <!-- Google fonts-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&amp;display=swap">
+  <!-- theme stylesheet-->
+  <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+  <!-- Custom stylesheet - for your changes-->
+  <link rel="stylesheet" href="css/custom.css">
+  <!-- 新增的抽屉 & 背景模糊 CSS（可以直接写进 custom.css） -->
+  <style>
+    body.drawer-open::before {
+      content:"";
+      position:fixed;
+      inset:0;
+      backdrop-filter:blur(8px);
+      background:rgba(0,0,0,0.2);
+      z-index:1040;
+    }
+    .drawer-gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fill, minmax(120px,1fr));
+      gap:0.75rem;
+    }
+    .drawer-gallery img{
+      width:100%;height:auto;object-fit:cover;
+      border-radius:4px;cursor:pointer;
+      transition:transform .2s;
+    }
+    .drawer-gallery img:hover{transform:scale(1.05);}
+  </style>
+  <!-- Favicon-->
+  <link rel="shortcut icon" href="img/favicon.png">
+</head>
+<body>
+  <div class="sidebar">
+    <!-- … 侧边栏保持不变 … -->
+  </div>
+
+  <div class="page-holder">
+    <!-- … 顶部导航保持不变 … -->
+
+    <div class="px-4 py-5">
+      <div class="container-fluid">
+        <div class="row gy-4 gx-5 masonry-wrapper">
+
+          <!-- ====================== 下面是 9 张卡片 ====================== -->
+          <!-- 1️⃣ 第 1 张 -->
+          <div class="col-lg-4 col-md-6 grid-item">
+            <div class="listing-item ps-0">
+              <div class="position-relative">
+                <ul class="list-inline listing-tags m-0">
+                  <li class="list-inline-item"><a class="reset-anchor fw-normal text-gray text-sm" href="#">Creative</a></li>
+                </ul>
+                <button class="reset-anchor d-block listing-img-holder border-0 bg-transparent p-0"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#drawer-1"
+                        aria-controls="drawer-1">
+                  <img class="img-fluid rounded-lg" src="img/portfolio-1.jpg" alt="Treasure"/>
+                  <p class="mb-0 text-primary small d-flex align-items-center listing-btn">
+                    <span>Look inside</span>
+                    <svg class="svg-icon text-primary svg-icon-sm ms-1">
+                      <use xlink:href="#arrow-right-1"></use>
+                    </svg>
+                  </p>
+                </button>
+              </div>
+              <div class="py-3">
+                <a class="reset-anchor" href="#">
+                  <h2 class="h5 listing-item-heading">Treasure</h2>
+                </a>
+                <p class="text-sm mb-0 listing-item-description">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2️⃣ 第 2 张（把 id、target、图片路径改成 2） -->
+          <div class="col-lg-4 col-md-6 grid-item">
+            <div class="listing-item ps-0">
+              <div class="position-relative">
+                <ul class="list-inline listing-tags m-0">
+                  <li class="list-inline-item"><a class="reset-anchor fw-normal text-gray text-sm" href="#">Creative</a></li>
+                </ul>
+                <button class="reset-anchor d-block listing-img-holder border-0 bg-transparent p-0"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#drawer-2"
+                        aria-controls="drawer-2">
+                  <img class="img-fluid rounded-lg" src="img/portfolio-2.jpg" alt="Wimbledon"/>
+                  <p class="mb-0 text-primary small d-flex align-items-center listing-btn">
+                    <span>Look inside</span>
+                    <svg class="svg-icon text-primary svg-icon-sm ms-1">
+                      <use xlink:href="#arrow-right-1"></use>
+                    </svg>
+                  </p>
+                </button>
+              </div>
+              <div class="py-3">
+                <a class="reset-anchor" href="#">
+                  <h2 class="h5 listing-item-heading">Wimbledon</h2>
+                </a>
+                <p class="text-sm mb-0 listing-item-description">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3️⃣ 第 3 张 -->
+          <div class="col-lg-4 col-md-6 grid-item">
+            <div class="listing-item ps-0">
+              <div class="position-relative">
+                <ul class="list-inline listing-tags m-0">
+                  <li class="list-inline-item"><a class="reset-anchor fw-normal text-gray text-sm" href="#">Creative</a></li>
+                </ul>
+                <button class="reset-anchor d-block listing-img-holder border-0 bg-transparent p-0"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#drawer-3"
+                        aria-controls="drawer-3">
+                  <img class="img-fluid rounded-lg" src="img/portfolio-3.jpg" alt="Tour de France"/>
+                  <p class="mb-0 text-primary small d-flex align-items-center listing-btn">
+                    <span>Look inside</span>
+                    <svg class="svg-icon text-primary svg-icon-sm ms-1">
+                      <use xlink:href="#arrow-right-1"></use>
+                    </svg>
+                  </p>
+                </button>
+              </div>
+              <div class="py-3">
+                <a class="reset-anchor" href="#">
+                  <h2 class="h5 listing-item-heading">Tour de France</h2>
+                </a>
+                <p class="text-sm mb-0 listing-item-description">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4️⃣ 第 4 张 -->
+          <div class="col-lg-4 col-md-6 grid-item">
+            <div class="listing-item ps-0">
+              <div class="position-relative">
+                <ul class="list-inline listing-tags m-0">
+                  <li class="list-inline-item"><a class="reset-anchor fw-normal text-gray text-sm" href="#">Creative</a></li>
+                </ul>
+                <button class="reset-anchor d-block listing-img-holder border-0 bg-transparent p-0"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#drawer-4"
+                        aria-controls="drawer-4">
+                  <img class="img-fluid rounded-lg" src="img/portfolio-4.jpg" alt="Haunted House"/>
+                  <p class="mb-0 text-primary small d-flex align-items-center listing-btn">
+                    <span>Look inside</span>
+                    <svg class="svg-icon text-primary svg-icon-sm ms-1">
+                      <use xlink:href="#arrow-right-1"></use>
+                    </svg>
+                  </p>
+                </button>
+              </div>
+              <div class="py-3">
+                <a class="reset-anchor" href="#">
+                  <h2 class="h5 listing-item-heading">Haunted House</h2>
+                </a>
+                <p class="text-sm mb-0 listing-item-description">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5️⃣ 第 5 张 -->
+          <div class="col-lg-4 col-md-6 grid-item">
+            <div class="listing-item ps-0">
+              <div class="position-relative">
+                <ul class="list-inline listing-tags m-0">
+                  <li class="list-inline-item"><a class="reset-anchor fw-normal text-gray text-sm" href="#">Creative</a></li>
+                </ul>
+                <button class="reset-anchor d-block listing-img-holder border-0 bg-transparent p-0"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#drawer-5"
+                        aria-controls="drawer-5">
+                  <img class="img-fluid rounded-lg" src="img/portfolio-5.jpg" alt="Best Friends"/>
+                  <p class="mb-0 text-primary small d-flex align-items-center listing-btn">
+                    <span>Look inside</span>
+                    <svg class="svg-icon text-primary svg-icon-sm ms-1">
+                      <use xlink:href="#arrow-right-1"></use>
+                    </svg>
+                  </p>
+                </button>
+              </div>
+              <div class="py-3">
+                <a class="reset-anchor" href="#">
+                  <h2 class="h5 listing-item-heading">Best Friends</h2>
+                </a>
+                <p class="text-sm mb-0 listing-item-description">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6️⃣ 第 6 张 -->
+          <div class="col-lg-4 col-md-6 grid-item">
+            <div class="listing-item ps-0">
+              <div class="position-relative">
+                <ul class="list-inline listing-tags m-0">
+                  <li class="list-inline-item"><a class="reset-anchor fw-normal text-gray text-sm" href="#">Creative</a></li>
+                </ul>
+                <button class="reset-anchor d-block listing-img-holder border-0 bg-transparent p-0"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#drawer-6"
+                        aria-controls="drawer-6">
+                  <img class="img-fluid rounded-lg" src="img/portfolio-6.jpg" alt="Banana Lady"/>
+                  <p class="mb-0 text-primary small d-flex align-items-center listing-btn">
+                    <span>Look inside</span>
+                    <svg class="svg-icon text-primary svg-icon-sm ms-1">
+                      <use xlink:href="#arrow-right-1"></use>
+                    </svg>
+                  </p>
+                </button>
+              </div>
+              <div class="py-3">
+                <a class="reset-anchor" href="#">
+                  <h2 class="h5 listing-item-heading">Banana Lady</h2>
+                </a>
+                <p class="text-sm mb-0 listing-item-description">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7️⃣ 第 7 张 -->
+          <div class="col-lg-4 col-md-6 grid-item">
+            <div class="listing-item ps-0">
+              <div class="position-relative">
+                <ul class="list-inline listing-tags m-0">
+                  <li class="list-inline-item"><a class="reset-anchor fw-normal text-gray text-sm" href="#">Creative</a></li>
+                </ul>
+                <button class="reset-anchor d-block listing-img-holder border-0 bg-transparent p-0"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#drawer-7"
+                        aria-controls="drawer-7">
+                  <img class="img-fluid rounded-lg" src="img/portfolio-7.jpg" alt="Be cool"/>
+                  <p class="mb-0 text-primary small d-flex align-items-center listing-btn">
+                    <span>Look inside</span>
+                    <svg class="svg-icon text-primary svg-icon-sm ms-1">
+                      <use xlink:href="#arrow-right-1"></use>
+                    </svg>
+                  </p>
+                </button>
+              </div>
+              <div class="py-3">
+                <a class="reset-anchor" href="#">
+                  <h2 class="h5 listing-item-heading">Be cool</h2>
+                </a>
+                <p class="text-sm mb-0 listing-item-description">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8️⃣ 第 8 张 -->
+          <div class="col-lg-4 col-md-6 grid-item">
+            <div class="listing-item ps-0">
+              <div class="position-relative">
+                <ul class="list-inline listing-tags m-0">
+                  <li class="list-inline-item"><a class="reset-anchor fw-normal text-gray text-sm" href="#">Creative</a></li>
+                </ul>
+                <button class="reset-anchor d-block listing-img-holder border-0 bg-transparent p-0"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#drawer-8"
+                        aria-controls="drawer-8">
+                  <img class="img-fluid rounded-lg" src="img/portfolio-8.jpg" alt="Spread the Love"/>
+                  <p class="mb-0 text-primary small d-flex align-items-center listing-btn">
+                    <span>Look inside</span>
+                    <svg class="svg-icon text-primary svg-icon-sm ms-1">
+                      <use xlink:href="#arrow-right-1"></use>
+                    </svg>
+                  </p>
+                </button>
+              </div>
+              <div class="py-3">
+                <a class="reset-anchor" href="#">
+                  <h2 class="h5 listing-item-heading">Spread the Love</h2>
+                </a>
+                <p class="text-sm mb-0 listing-item-description">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 9️⃣ 第 9 张 -->
+          <div class="col-lg-4 col-md-6 grid-item">
+            <div class="listing-item ps-0">
+              <div class="position-relative">
+                <ul class="list-inline listing-tags m-0">
+                  <li class="list-inline-item"><a class="reset-anchor fw-normal text-gray text-sm" href="#">Creative</a></li>
+                </ul>
+                <button class="reset-anchor d-block listing-img-holder border-0 bg-transparent p-0"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#drawer-9"
+                        aria-controls="drawer-9">
+                  <img class="img-fluid rounded-lg" src="img/portfolio-9.jpg" alt="Grounghog Day"/>
+                  <p class="mb-0 text-primary small d-flex align-items-center listing-btn">
+                    <span>Look inside</span>
+                    <svg class="svg-icon text-primary svg-icon-sm ms-1">
+                      <use xlink:href="#arrow-right-1"></use>
+                    </svg>
+                  </p>
+                </button>
+              </div>
+              <div class="py-3">
+                <a class="reset-anchor" href="#">
+                  <h2 class="h5 listing-item-heading">Grounghog Day</h2>
+                </a>
+                <p class="text-sm mb-0 listing-item-description">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- ====================== 结束 ====================== -->
+
+        </div> <!-- /.row -->
+      </div> <!-- /.container-fluid -->
+    </div> <!-- /.px-4 py-5 -->
+    
+    <!-- ====================== 抽屉模板（复制 9 次） ====================== -->
+    <!-- 抽屉 #1 -->
+    <div class="offcanvas offcanvas-end drawer-offcanvas"
+         tabindex="-1"
+         id="drawer-1"
+         aria-labelledby="drawer-1-label"
+         data-bs-scroll="true"
+         data-bs-backdrop="false">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="drawer-1-label">Treasure – Gallery</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="drawer-gallery">
+          <!-- 这里放 100 张图片，示例写 10 张，实际自行补足 -->
+          <img src="drawer/portfolio-1/img001.jpg" alt="img 1">
+          <img src="drawer/portfolio-1/img002.jpg" alt="img 2">
+          <img src="drawer/portfolio-1/img003.jpg" alt="img 3">
+          <img src="drawer/portfolio-1/img004.jpg" alt="img 4">
+          <img src="drawer/portfolio-1/img005.jpg" alt="img 5">
+          <img src="drawer/portfolio-1/img006.jpg" alt="img 6">
+          <img src="drawer/portfolio-1/img007.jpg" alt="img 7">
+          <img src="drawer/portfolio-1/img008.jpg" alt="img 8">
+          <img src="drawer/portfolio-1/img009.jpg" alt="img 9">
+          <img src="drawer/portfolio-1/img010.jpg" alt="img 10">
+          <!-- … 继续添加至第 100 张 -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 抽屉 #2 -->
+    <div class="offcanvas offcanvas-end drawer-offcanvas"
+         tabindex="-1"
+         id="drawer-2"
+         aria-labelledby="drawer-2-label"
+         data-bs-scroll="true"
+         data-bs-backdrop="false">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="drawer-2-label">Wimbledon – Gallery</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="drawer-gallery">
+          <img src="drawer/portfolio-2/img001.jpg" alt="img 1">
+          <!-- … 其余 99 张 -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 抽屉 #3 … #9（同上，只换 id、label、文件夹路径） -->
+    <!-- 这里省略，复制上面的结构即可 -->
+    
+    <!-- ====================== 其余页面结构（footer、scripts）保持不变 ====================== -->
+    <footer class="text-muted" style="background: #0d0d0d">
+      <!-- … footer 内容保持原样 … -->
+    </footer>
+  </div> <!-- /.page-holder -->
+
+  <!-- JavaScript files -->
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/masonry-layout/masonry.pkgd.min.js"></script>
+  <script src="vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="js/front.js"></script>
+
+  <!-- 抽屉打开/关闭时添加/移除背景模糊的脚本 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const offcanvasEls = document.querySelectorAll('.drawer-offcanvas');
+
+      offcanvasEls.forEach(offcanvas => {
+        offcanvas.addEventListener('show.bs.offcanvas', () => {
+          document.body.classList.add('drawer-open');
+        });
+        offcanvas.addEventListener('hide.bs.offcanvas', () => {
+          // 所有抽屉都关闭后才去掉 class
+          const anyOpen = document.querySelector('.offcanvas.show');
+          if (!anyOpen) {
+            document.body.classList.remove('drawer-open');
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- SVG Sprite injection (保持原样) -->
+  <script>
+    function injectSvgSprite(path){
+        var ajax = new XMLHttpRequest();
+        ajax.open("GET", path, true);
+        ajax.send();
+        ajax.onload = function(e){
+            var div = document.createElement("div");
+            div.className = 'd-none';
+            div.innerHTML = ajax.responseText;
+            document.body.insertBefore(div, document.body.childNodes[0]);
+        }
+    }
+    injectSvgSprite('icons/orion-svg-sprite.svg');
+  </script>
+
+  <!-- FontAwesome CSS -->
+  <link rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+</body>
+</html>
